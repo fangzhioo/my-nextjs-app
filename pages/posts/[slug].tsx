@@ -22,7 +22,7 @@ interface PostPageProps {
 
 interface PostHeaderProps {
   title: string;
-  date?: string;
+  date: string;
 }
 
 const PostContainer = styled(Container)`
