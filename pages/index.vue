@@ -5,7 +5,9 @@
         <logo />
         <vuetify-logo />
       </div>
-      <v-btn @click="handleChange">theme{{ $vuetify.theme.dark }}</v-btn>
+      <v-btn @click="handleChange">{{
+        $vuetify.theme.dark ? 'dark' : 'light'
+      }}</v-btn>
     </v-col>
   </v-row>
 </template>
