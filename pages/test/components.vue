@@ -2,7 +2,9 @@
 
 <template>
   <div>
-      pet list
+    <my-custom-button>hahahah</my-custom-button>
+    <lazy-hello-world />
+    <nuxt3 />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 declare module '#app' {
-    interface NuxtApp {
-      $hello (msg: string): string
-    }
+    // interface NuxtApp {
+    //   $hello (msg: string): string
+    // }
   }
   
   declare module '@vue/runtime-core' {
