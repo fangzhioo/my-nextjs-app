@@ -7,7 +7,8 @@
   },
   "devDependencies": {
     "nuxt3": "latest",
-    "pont-engine": "^1.0.13"
+    "pont-engine": "^1.0.13",
+    "sass": "^1.44.0"
   },
   "dependencies": {
     "axios": "^0.24.0",

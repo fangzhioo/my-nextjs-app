@@ -1,6 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-    //   req.someValue = true
-    req.setEncoding('utf8')
+    res.setHeader("Content-Type", "application/json;charset=utf-8")
 }

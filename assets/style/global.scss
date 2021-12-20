@@ -1,0 +1,45 @@
+@import './reset';
+@import './variables';
+@import './theme';
+
+.layout_default {
+    .kirito_container {
+        margin: 0 auto;
+        width: 100%;
+        background-color: var(--glass-background);
+        @include media-to(xs) {
+            max-width: 540px;
+            color: blue;
+        }
+        @include media-to(sm) {
+            max-width: 720px;
+            color: red;
+        }
+        @include media-to(md) {
+            max-width: 960px;
+            color: green;
+        }
+        @include media-to(lg) {
+            max-width: 1140px;
+            color: yellow;
+        }
+        @include media-to(xl) {
+            max-width: 1340px;
+            color: aqua;
+        }
+    }
+    
+    .kirito_header {
+        &__above-nav, &__above-search {
+            @include media-to(xs) {
+                display: none;
+            }
+        }
+    }
+
+    .kirito_footer {
+        @include media-to(xs) {
+            display: none;
+        }
+    }
+}
