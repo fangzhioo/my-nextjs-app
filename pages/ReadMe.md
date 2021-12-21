@@ -78,7 +78,7 @@ Example:
 此文件树将生成以下路由：
 
 ```js
-[
+;[
   {
     path: '/parent',
     component: '~/pages/parent.vue',
@@ -91,7 +91,7 @@ Example:
       },
     ],
   },
-];
+]
 ```
 
 要显示 `child.vue` 组件，您必须将`<NuxtChild>`组件 插入`pages/parent.vue`中：

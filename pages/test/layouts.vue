@@ -10,7 +10,7 @@
 export default {
   // layout: 'custom',
   layout: false,
-};
+}
 </script>
 
 <script setup lang="ts"></script>

@@ -28,7 +28,7 @@ Nuxt 提供了一个可定制的布局框架，您可以在整个应用程序中
 <script>
 export default {
   layout: 'custom',
-};
+}
 </script>
 ```
 

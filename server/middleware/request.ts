@@ -1,6 +1,6 @@
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   //   req.someValue = true
-  req.setEncoding('utf8');
-};
+  req.setEncoding('utf8')
+}

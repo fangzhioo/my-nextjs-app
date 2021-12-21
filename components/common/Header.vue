@@ -20,29 +20,29 @@
 </template>
 
 <script lang="ts" setup>
-const theme = useTheme();
+const theme = useTheme()
 
 onBeforeMount(() => {
-  theme.value = useDefaultTheme().value;
+  theme.value = useDefaultTheme().value
   useMeta({
     htmlAttrs: {
       'data-mode': theme.value,
     },
-  });
-});
+  })
+})
 
 const handleChangeTheme = () => {
-  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+  theme.value = theme.value === 'dark' ? 'light' : 'dark'
   useMeta({
     htmlAttrs: {
       'data-mode': theme.value,
     },
-  });
-};
+  })
+}
 </script>
 
 <style lang="scss">
-// @import '~style/scss/variables.scss';
+@import 'assets/style/variables.scss';
 
 .kirito_header {
   top: 0;
@@ -63,8 +63,16 @@ const handleChangeTheme = () => {
     }
     &-nav {
       flex: 1;
+      @include media-to(xs) {
+        display: none;
+      }
       &-list {
         display: flex;
+      }
+    }
+    &-search {
+      @include media-to(xs) {
+        display: none;
       }
     }
   }

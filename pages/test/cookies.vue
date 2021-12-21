@@ -16,18 +16,18 @@
 <script setup lang="ts">
 // Cookie 使用
 class User {
-  name?: string;
+  name?: string
 }
 
-const user = useCookie<User>('user');
-const logins = useCookie<number>('logins');
+const user = useCookie<User>('user')
+const logins = useCookie<number>('logins')
 
 const login = () => {
-  logins.value = (logins.value || 0) + 1;
-  user.value = { name: 'CookieLover.' + new Date().getMilliseconds() };
-};
+  logins.value = (logins.value || 0) + 1
+  user.value = { name: `CookieLover.${new Date().getMilliseconds()}` }
+}
 
 const logout = () => {
-  user.value = null;
-};
+  user.value = null
+}
 </script>

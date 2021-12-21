@@ -9,11 +9,11 @@ Nuxt 将自动读取您`plugins`目录中的文件并加载它们。您可以在
 传递给插件的唯一参数是`nuxtApp`。
 
 ```js
-import { defineNuxtPlugin } from '#app';
+import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin((nuxtApp) => {
   // Doing something with nuxtApp
-});
+})
 ```
 
 ## Automatically providing helpers (小助手功能)
@@ -21,15 +21,15 @@ export default defineNuxtPlugin((nuxtApp) => {
 如果您想在`NuxtApp`实例上提供`帮助程序`，只需从一个`provide`键下的插件中返回它即可。 For example:
 
 ```js
-import { defineNuxtPlugin } from '#app';
+import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
       hello: () => 'world',
     },
-  };
-});
+  }
+})
 ```
 
 In another file you can use this:
@@ -60,17 +60,17 @@ index.d.ts
 ```ts
 declare module '#app' {
   interface NuxtApp {
-    $hello(msg: string): string;
+    $hello(msg: string): string
   }
 }
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $hello(msg: string): string;
+    $hello(msg: string): string
   }
 }
 
-export {};
+export {}
 ```
 
 ## Vue plugins
@@ -88,14 +88,14 @@ yarn add --dev vue-gtag-next
 然后创建一个插件文件`plugins/vue-gtag.client.js`。
 
 ```ts
-import { defineNuxtPlugin } from '#app';
-import VueGtag from 'vue-gtag-next';
+import { defineNuxtPlugin } from '#app'
+import VueGtag from 'vue-gtag-next'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGtag, {
     property: {
       id: 'GA_MEASUREMENT_ID',
     },
-  });
-});
+  })
+})
 ```

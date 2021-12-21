@@ -9,11 +9,11 @@ Example: (using named export)
 composables/useFoo.ts
 
 ```ts
-import { useState } from '#app';
+import { useState } from '#app'
 
 export const useFoo = () => {
-  return useState('foo', () => 'bar');
-};
+  return useState('foo', () => 'bar')
+}
 ```
 
 Example: (using default export)
@@ -21,11 +21,11 @@ Example: (using default export)
 composables/use-foo.ts or composables/useFoo.ts
 
 ```ts
-import { useState } from '#app';
+import { useState } from '#app'
 
 // It will be available as useFoo() (pascalCase of file name without extension)
 export default function () {
-  return 'bar';
+  return 'bar'
 }
 ```
 
@@ -41,6 +41,6 @@ app.vue
 </template>
 
 <script setup>
-const foo = useFoo();
+const foo = useFoo()
 </script>
 ```

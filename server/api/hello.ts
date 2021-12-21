@@ -1,2 +1,2 @@
 export default (req, res) =>
-  `Hello World (Generated at ${new Date().toUTCString()})`;
+  `Hello World (Generated at ${new Date().toUTCString()})`

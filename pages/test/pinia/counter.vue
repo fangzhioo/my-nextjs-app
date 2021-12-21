@@ -1,7 +1,8 @@
 <template>
   <div>
     <p>
-      This is an example store to test out devtools. Try one of the following with the devtools open:
+      This is an example store to test out devtools. Try one of the following
+      with the devtools open:
       <br />
     </p>
 
@@ -11,19 +12,23 @@
       <li>Use decrement to zero to see how action groups work</li>
       <li>
         Click
-        <b>Test Errors</b> and immediately after
-        <b>increment</b> the store
+        <b>Test Errors</b> and immediately after <b>increment</b> the store
       </li>
-      <li>While the dev server is running, try changing counter.changeMe, adding, and removing new state properties</li>
+      <li>
+        While the dev server is running, try changing counter.changeMe, adding,
+        and removing new state properties
+      </li>
     </ol>
 
     <h2>Counter Store</h2>
 
-    <p data-testid="counter-values">Counter: {{ counter.n }}. Double: {{ counter.double }}</p>
+    <p data-testid="counter-values">
+      Counter: {{ counter.n }}. Double: {{ counter.double }}
+    </p>
 
     <p>Increment the Store:</p>
 
-    <button @click="counter.increment()" data-testid="increment">+1</button>
+    <button data-testid="increment" @click="counter.increment()">+1</button>
     <button @click="counter.increment(10)">+10</button>
     <button @click="counter.increment(100)">+100</button>
     <button @click="counter.n++">Direct Increment</button>
@@ -34,7 +39,9 @@
           state.incrementedTimes++
         })
       "
-    >Direct patch</button>
+    >
+      Direct patch
+    </button>
 
     <p>Other actions:</p>
 
@@ -56,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCounter } from "~/stores/counter";
+import { useCounter } from '~/stores/counter'
 
 const counter = useCounter()
 

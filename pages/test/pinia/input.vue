@@ -6,20 +6,20 @@
       </li>
     </ul>
     <div>
-      <input type="text" v-model="name" @keydown.enter="handleSave" />
+      <input v-model="name" type="text" @keydown.enter="handleSave" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user';
+import { useUserStore } from '~/stores/user'
 
-const user = useUserStore();
-const name = ref('');
+const user = useUserStore()
+const name = ref('')
 
 const handleSave = () => {
   if (name.value) {
-    user.setNewName(name.value);
+    user.setNewName(name.value)
   }
-};
+}
 </script>

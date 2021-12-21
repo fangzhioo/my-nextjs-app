@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const { $hello } = useNuxtApp();
+const { $hello } = useNuxtApp()
 </script>
 
 <style></style>

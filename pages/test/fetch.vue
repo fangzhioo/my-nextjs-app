@@ -12,15 +12,15 @@
 <script setup lang="ts">
 const { data, refresh, pending } = await useAsyncData('/api/hello', () =>
   $fetch('/api/hello'),
-);
+)
 
 const handleRefresh = () => {
-  refresh();
-};
+  refresh()
+}
 
 const { data: data2 } = await useLazyFetch('/api/nodejs', {
   params: { foo: 'bar' },
-});
+})
 </script>
 
 <style scoped></style>

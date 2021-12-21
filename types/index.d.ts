@@ -6,8 +6,8 @@ declare module '#app' {
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $hello(msg: string): string;
+    $hello(msg: string): string
   }
 }
 
-export {};
+export {}

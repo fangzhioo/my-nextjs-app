@@ -16,13 +16,13 @@
 </template>
 
 <script setup lang="ts">
-const dateStr = ref(new Date('2016-10-26'));
-const locales = useLocales();
-const locale = useLocale();
-const date = useLocaleDate(dateStr);
+const dateStr = ref(new Date('2016-10-26'))
+const locales = useLocales()
+const locale = useLocale()
+const date = useLocaleDate(dateStr)
 
 // composables/useFoo.ts
-const foo = useFoo();
+const foo = useFoo()
 </script>
 
 <style></style>

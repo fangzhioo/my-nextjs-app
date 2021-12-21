@@ -1,4 +1,4 @@
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { IncomingMessage, ServerResponse } from 'http'
 
 export const data = [
   {
@@ -457,9 +457,9 @@ export const data = [
       },
     ],
   },
-];
+]
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-  res.statusCode = 200;
-  res.end(JSON.stringify(data));
-};
+  res.statusCode = 200
+  res.end(JSON.stringify(data))
+}

@@ -1,5 +1,5 @@
 <script setup>
-const counter = useState('counter', () => Math.round(Math.random() * 1000));
+const counter = useState('counter', () => Math.round(Math.random() * 1000))
 </script>
 
 <template>

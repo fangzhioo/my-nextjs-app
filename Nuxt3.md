@@ -46,18 +46,18 @@ const {
 server/api/count.ts
 
 ```ts
-let counter = 0;
+let counter = 0
 export default () => {
-  counter++;
-  return JSON.stringify(counter);
-};
+  counter++
+  return JSON.stringify(counter)
+}
 ```
 
 app.vue
 
 ```vue
 <script setup>
-const { data } = await useAsyncData('count', () => $fetch('/api/count'));
+const { data } = await useAsyncData('count', () => $fetch('/api/count'))
 </script>
 
 <template>Page visits: {{ data }}</template>
@@ -107,7 +107,7 @@ app.vue
 
 ```vue
 <script setup>
-const { data } = await useFetch('/api/count');
+const { data } = await useFetch('/api/count')
 </script>
 
 <template>Page visits: {{ data.count }}</template>
@@ -142,7 +142,7 @@ const { data } = await useFetch('/api/count');
 <script setup>
 const { data: mountain } = await useFetch('/api/mountains/everest', {
   pick: ['title', 'description'],
-});
+})
 </script>
 
 <template>
@@ -164,14 +164,14 @@ export default defineComponent({
     const [{ data: organization }, { data: repos }] = await Promise.all([
       useFetch(`https://api.github.com/orgs/nuxt`),
       useFetch(`https://api.github.com/orgs/nuxt/repos`),
-    ]);
+    ])
 
     return {
       organization,
       repos,
-    };
+    }
   },
-});
+})
 </script>
 
 <template>
@@ -217,7 +217,7 @@ app.vue
 
 ```vue
 <script setup>
-const counter = useState('counter', () => Math.round(Math.random() * 1000));
+const counter = useState('counter', () => Math.round(Math.random() * 1000))
 </script>
 
 <template>
@@ -244,15 +244,15 @@ const counter = useState('counter', () => Math.round(Math.random() * 1000));
 composables/states.ts
 
 ```ts
-export const useCounter = () => useState<number>('counter', () => 0);
-export const useColor = () => useState<string>('color', () => 'pink');
+export const useCounter = () => useState<number>('counter', () => 0)
+export const useColor = () => useState<string>('color', () => 'pink')
 ```
 
 app.vue
 
 ```vue
 <script setup>
-const color = useColor(); // Same as useState('color')
+const color = useColor() // Same as useState('color')
 </script>
 
 <template>
@@ -285,9 +285,9 @@ export default {
       bodyAttrs: {
         class: 'test',
       },
-    });
+    })
   },
-};
+}
 ```
 
 ## Meta Components （组件）
@@ -326,7 +326,7 @@ app.vue
 <script>
 export default {
   data: () => ({ dynamic: 49 }),
-};
+}
 </script>
 ```
 
@@ -342,10 +342,10 @@ export default {
 在`composables`、`components`和`plugins`中，您可以使用`useNuxtApp`访问`nuxtApp`。
 
 ```ts
-import { useNuxtApp } from '#app';
+import { useNuxtApp } from '#app'
 
 function useMyComposable() {
-  const nuxtApp = useNuxtApp();
+  const nuxtApp = useNuxtApp()
   // access runtime nuxt app instance
 }
 ```
@@ -359,10 +359,10 @@ function useMyComposable() {
 您可以提供可用于所有`composables`和`application`的助手。这通常在`Nuxt plugin`中。
 
 ```ts
-const nuxtApp = useNuxtApp();
-nuxtApp.provide('hello', (name) => `Hello ${name}!`);
+const nuxtApp = useNuxtApp()
+nuxtApp.provide('hello', (name) => `Hello ${name}!`)
 
-console.log(nuxtApp.$hello('name')); // Prints "Hello name!"
+console.log(nuxtApp.$hello('name')) // Prints "Hello name!"
 ```
 
 在 Nuxt 2 插件中，这被称为注入函数。
@@ -427,7 +427,7 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     API_SECRET: '123',
   },
-});
+})
 ```
 
 添加`API_BASE`到`publicRuntimeConfig`时，Nuxt 将其添加到页面的有效负载中。这样我们就可以在服务器和浏览器中普遍访问`API_BASE`。
@@ -455,7 +455,7 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     API_SECRET: process.env.API_SECRET,
   },
-});
+})
 ```
 
 > 💡 提示：虽然没有必要，但通过使用相同的运行时配置名称作为 `env` 变量，您可以在生产中使用平台环境变量轻松覆盖它们。
@@ -479,7 +479,7 @@ export default defineNuxtConfig({
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
+const config = useRuntimeConfig()
 </script>
 ```
 
@@ -492,16 +492,16 @@ const config = useRuntimeConfig();
 在 API 路由中，您可以通过直接从 `virtual` 导入来访问运行时配置`#config`.
 
 ```ts
-import config from '#config';
+import config from '#config'
 
 export default async () => {
   const result = await $fetch('https://my.api.com/test', {
     headers: {
       Authorization: `Bearer ${config.API_AUTH_TOKEN}`,
     },
-  });
-  return result;
-};
+  })
+  return result
+}
 ```
 
 ### Typing runtime config (键入运行时配置)
@@ -513,14 +513,14 @@ index.d.ts
 ```ts
 declare module '@nuxt/schema' {
   interface PublicRuntimeConfig {
-    testConfig: string;
+    testConfig: string
   }
   interface PrivateRuntimeConfig {
-    token: string;
+    token: string
   }
 }
 // It is always important to ensure you import/export something when augmenting a type
-export {};
+export {}
 ```
 
 ---
@@ -534,7 +534,7 @@ Nuxt 提供了一个 SSR 友好的可组合来读取和写入`cookie`。
 在您的`pages`, `components` 和 `plugins`中，您可以`useCookie`用来创建绑定到特定 `cookie` 的反应式引用。
 
 ```ts
-const cookie = useCookie(name, options);
+const cookie = useCookie(name, options)
 ```
 
 > `useCookie`仅在`setup`或`Lifecycle Hooks`期间有效。
@@ -555,8 +555,8 @@ const cookie = useCookie(name, options);
 </template>
 
 <script setup>
-const counter = useCookie('counter');
-counter.value = counter.value || Math.round(Math.random() * 1000);
+const counter = useCookie('counter')
+counter.value = counter.value || Math.round(Math.random() * 1000)
 </script>
 ```
 
@@ -625,16 +625,16 @@ Specifies the boolean or string value for the SameSite Set-Cookie attribute .
 ### Example:
 
 ```ts
-import { useCookie, setCookie } from 'h3';
+import { useCookie, setCookie } from 'h3'
 
 export default (req, res) => {
   // Read counter cookie
-  let counter = useCookie(req, 'counter') || 0;
+  let counter = useCookie(req, 'counter') || 0
 
   // Increase counter cookie by 1
-  setCookie(res, 'counter', ++counter);
+  setCookie(res, 'counter', ++counter)
 
   // Send JSON response
-  return { counter };
-};
+  return { counter }
+}
 ```

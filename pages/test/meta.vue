@@ -21,7 +21,7 @@ export default {
   head: {
     title: 'Another title',
   },
-};
+}
 </script>
 <script setup lang="ts">
 // __vite_ssr_import_1__.useMeta is not a function ????
@@ -30,11 +30,11 @@ export default {
 //         class: 'test'
 //     }
 // })
-const dynamic = useState('dynamic', () => 49);
+const dynamic = useState('dynamic', () => 49)
 
 const handleRandom = () => {
-  dynamic.value = Math.random() * 100;
-};
+  dynamic.value = Math.random() * 100
+}
 </script>
 
 <style scoped></style>

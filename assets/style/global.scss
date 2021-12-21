@@ -28,19 +28,4 @@
       color: aqua;
     }
   }
-
-  .kirito_header {
-    &__above-nav,
-    &__above-search {
-      @include media-to(xs) {
-        display: none;
-      }
-    }
-  }
-
-  .kirito_footer {
-    @include media-to(xs) {
-      display: none;
-    }
-  }
 }

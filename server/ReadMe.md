@@ -17,7 +17,7 @@ Nuxt 将自动读入`~/server/api` 目录中的任何文件 以创建 API 端点
 server/api/hello.ts
 
 ```ts
-export default (req, res) => 'Hello World';
+export default (req, res) => 'Hello World'
 ```
 
 查看结果： http://localhost:3000/api/hello .
@@ -28,12 +28,12 @@ server/api/async.ts
 
 ```ts
 export default async (req, res) => {
-  await someAsyncFunction();
+  await someAsyncFunction()
 
   return {
     someData: true,
-  };
-};
+  }
+}
 ```
 
 #### Example: Using Node.js style
@@ -41,12 +41,12 @@ export default async (req, res) => {
 server/api/node.ts
 
 ```ts
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-  res.statusCode = 200;
-  res.end('Works!');
-};
+  res.statusCode = 200
+  res.end('Works!')
+}
 ```
 
 ## Server Middleware
@@ -59,16 +59,16 @@ Nuxt 会自动读入任何文件， `~/server/middleware` 为你的项目创建�
 
 ```ts
 export default async (req, res) => {
-  req.someValue = true;
-};
+  req.someValue = true
+}
 ```
 
 `req/res`对象没有什么不同，所以输入它们很简单。
 
 ```ts
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-  req.someValue = true;
-};
+  req.someValue = true
+}
 ```
