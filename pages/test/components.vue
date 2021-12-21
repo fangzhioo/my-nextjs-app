@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <my-custom-button>hahahah</my-custom-button>
@@ -8,10 +6,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

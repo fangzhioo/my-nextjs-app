@@ -1,4 +1,10 @@
-import { CodeGenerator, Interface, Mod, BaseClass, Surrounding } from 'pont-engine';
+import {
+  CodeGenerator,
+  Interface,
+  Mod,
+  BaseClass,
+  Surrounding,
+} from 'pont-engine';
 import * as pont from 'pont-engine';
 
 export default class MyGenerator extends CodeGenerator {
@@ -6,9 +12,11 @@ export default class MyGenerator extends CodeGenerator {
   getBaseClassInDeclaration(base: BaseClass) {
     return `class ${base.name} {
       ${base.properties
-        .map(prop => {
+        .map((prop) => {
           // 替换 defs. 不使用 defs 命名空间
-          let propertyCode = prop.toPropertyCode(Surrounding.typeScript).replace(/defs\./g, '');
+          let propertyCode = prop
+            .toPropertyCode(Surrounding.typeScript)
+            .replace(/defs\./g, '');
 
           // 如果属性是范型参考，则属性为必选
           // 例如 data?: T0 , creditCustomerConsumptionDailyVo?: CreditManagerV2.AggregateAllTransactionDetailsWithinDimensions[]
@@ -27,9 +35,9 @@ export default class MyGenerator extends CodeGenerator {
     const content = `namespace ${this.dataSource.name || 'defs'} {
       ${this.dataSource.baseClasses
         .map(
-          base => `
+          (base) => `
         export ${this.getBaseClassInDeclaration(base)}
-      `
+      `,
         )
         .join('\n')}
     }
@@ -45,7 +53,8 @@ export default class MyGenerator extends CodeGenerator {
       bodyParams = bodyParams.replace(/defs\./g, '');
     }
     const paramsCode = inter.getParamsCode();
-    const isEmptyParams = paramsCode.replace(/(\n|\s)/g, '') === 'classParams{}';
+    const isEmptyParams =
+      paramsCode.replace(/(\n|\s)/g, '') === 'classParams{}';
 
     const requestArgs = [];
 
@@ -80,8 +89,12 @@ export default class MyGenerator extends CodeGenerator {
   getInterfaceContent(inter: Interface) {
     const bodyParams = inter.getBodyParamsCode();
     const paramsCode = inter.getParamsCode();
-    const isEmptyParams = paramsCode.replace(/(\n|\s)/g, '') === 'classParams{}';
-    const contentType = inter.consumes && inter.consumes.length ? inter.consumes[0] : 'application/json';
+    const isEmptyParams =
+      paramsCode.replace(/(\n|\s)/g, '') === 'classParams{}';
+    const contentType =
+      inter.consumes && inter.consumes.length
+        ? inter.consumes[0]
+        : 'application/json';
 
     const requestArgs: string[] = [];
     !isEmptyParams && requestArgs.push(`params`);
@@ -118,13 +131,13 @@ export default class MyGenerator extends CodeGenerator {
        * @description ${mod.description}
        */
       ${mod.interfaces
-        .map(inter => {
+        .map((inter) => {
           return `import * as ${inter.name} from './${inter.name}';`;
         })
         .join('\n')}
 
       export {
-        ${mod.interfaces.map(inter => inter.name).join(', \n')}
+        ${mod.interfaces.map((inter) => inter.name).join(', \n')}
       }
     `;
   }
@@ -133,7 +146,7 @@ export default class MyGenerator extends CodeGenerator {
   getModsIndex() {
     let conclusion = `
       export const API = {
-        ${this.dataSource.mods.map(mod => mod.name).join(', \n')}
+        ${this.dataSource.mods.map((mod) => mod.name).join(', \n')}
       };
     `;
 
@@ -141,14 +154,14 @@ export default class MyGenerator extends CodeGenerator {
     if (this.dataSource.name) {
       conclusion = `
         export const ${this.dataSource.name} = {
-          ${this.dataSource.mods.map(mod => mod.name).join(', \n')}
+          ${this.dataSource.mods.map((mod) => mod.name).join(', \n')}
         };
       `;
     }
 
     return `
       ${this.dataSource.mods
-        .map(mod => {
+        .map((mod) => {
           return `import * as ${mod.name} from './${mod.name}';`;
         })
         .join('\n')}
@@ -181,18 +194,21 @@ export class FileStructures extends pont.FileStructures {
     `;
   }
 
-  getBaseClassesInDeclaration(originCode: string, usingMultipleOrigins: boolean) {
+  getBaseClassesInDeclaration(
+    originCode: string,
+    usingMultipleOrigins: boolean,
+  ) {
     return `
       export ${originCode}
     `;
   }
 
   getDataSourcesDeclarationTs() {
-    const dsNames = (this as any).generators.map(ge => ge.dataSource.name);
+    const dsNames = (this as any).generators.map((ge) => ge.dataSource.name);
 
     return `
       ${dsNames
-        .map(name => {
+        .map((name) => {
           return `export * from './${name}/api';`;
         })
         .join('\n')}
@@ -201,11 +217,11 @@ export class FileStructures extends pont.FileStructures {
   }
 
   getDataSourcesTs() {
-    const dsNames = (this as any).generators.map(ge => ge.dataSource.name);
+    const dsNames = (this as any).generators.map((ge) => ge.dataSource.name);
 
     return `
       ${dsNames
-        .map(name => {
+        .map((name) => {
           return `import { ${name} } from './${name}';`;
         })
         .join('\n')}

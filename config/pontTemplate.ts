@@ -5,12 +5,16 @@ export default class MyGenerator extends CodeGenerator {
   getInterfaceContentInDeclaration(inter: Interface) {
     const paramsCode = inter.getParamsCode();
     const bodyParamsCode = inter.getBodyParamsCode();
-    const hasGetParams = !!inter.parameters.filter((param) => param.in !== 'body').length;
+    const hasGetParams = !!inter.parameters.filter(
+      (param) => param.in !== 'body',
+    ).length;
     const requestParams = bodyParamsCode
       ? `{ ${hasGetParams ? 'params, ' : ''}data }:{ params${
           hasGetParams ? '' : '?'
         }: Params, data: ${bodyParamsCode} }`
-      : `{ ${hasGetParams ? 'params' : ''} }:{ params${hasGetParams ? '' : '?'}: Params }`;
+      : `{ ${hasGetParams ? 'params' : ''} }:{ params${
+          hasGetParams ? '' : '?'
+        }: Params }`;
 
     return `
       export ${paramsCode}
@@ -58,19 +62,19 @@ export default class MyGenerator extends CodeGenerator {
   }
 }
 
-export class FileStructures extends pont.FileStructures { 
+export class FileStructures extends pont.FileStructures {
   getDataSourcesTs() {
-    const dsNames = (this as any).generators.map(ge => ge.dataSource.name);
+    const dsNames = (this as any).generators.map((ge) => ge.dataSource.name);
 
     return `
       ${dsNames
-        .map(name => {
+        .map((name) => {
           return `import { defs as ${name}Defs, ${name} } from './${name}';
           `;
         })
         .join('\n')}
       export const defs = {
-        ${dsNames.map(name => `${name}: ${name}Defs,`).join('\n')}
+        ${dsNames.map((name) => `${name}: ${name}Defs,`).join('\n')}
       };
       export const API = {
         ${dsNames.join(',\n')}
@@ -81,6 +85,4 @@ export class FileStructures extends pont.FileStructures {
       
     `;
   }
-
-  
 }

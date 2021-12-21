@@ -1,13 +1,11 @@
 <template>
   <div class="home-page">
-      <home-main />
-      <home-aside />
+    <home-main />
+    <home-aside />
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style>
 .home-page {

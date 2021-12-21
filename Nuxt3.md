@@ -60,7 +60,7 @@ app.vue
 const { data } = await useAsyncData('count', () => $fetch('/api/count'));
 </script>
 
-<template> Page visits: {{ data }} </template>
+<template>Page visits: {{ data }}</template>
 ```
 
 ## useLazyAsyncData
@@ -110,7 +110,7 @@ app.vue
 const { data } = await useFetch('/api/count');
 </script>
 
-<template> Page visits: {{ data.count }} </template>
+<template>Page visits: {{ data.count }}</template>
 ```
 
 ## useLazyFetch
@@ -223,12 +223,8 @@ const counter = useState('counter', () => Math.round(Math.random() * 1000));
 <template>
   <div>
     Counter: {{ counter }}
-    <button @click="counter++">
-      +
-    </button>
-    <button @click="counter--">
-      -
-    </button>
+    <button @click="counter++">+</button>
+    <button @click="counter--">-</button>
   </div>
 </template>
 ```
@@ -552,15 +548,9 @@ const cookie = useCookie(name, options);
 <template>
   <div>
     <h1>Counter: {{ counter || '-' }}</h1>
-    <button @click="counter = null">
-      reset
-    </button>
-    <button @click="counter--">
-      -
-    </button>
-    <button @click="counter++">
-      +
-    </button>
+    <button @click="counter = null">reset</button>
+    <button @click="counter--">-</button>
+    <button @click="counter++">+</button>
   </div>
 </template>
 

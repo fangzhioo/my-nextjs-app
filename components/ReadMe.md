@@ -1,4 +1,5 @@
 # Components directory
+
 The components/ directory is where you put all your Vue components which can then be imported inside your pages or other components (learn more ).
 
 Nuxt automatically imports any components in your components/ directory (along with components that are registered by any modules you may be using).
@@ -10,6 +11,7 @@ Nuxt automatically imports any components in your components/ directory (along w
 ```
 
 layouts/default.vue
+
 ```vue
 <template>
   <div>
@@ -59,6 +61,7 @@ layouts/default.vue
 This is particularly useful if the component is not always needed. By using the Lazy prefix you can delay loading the component code until the right moment, which can be helpful for optimizing your JavaScript bundle size.
 
 pages/index.vue
+
 ```vue
 <template>
   <div>
@@ -72,10 +75,10 @@ pages/index.vue
 export default {
   data() {
     return {
-      show: false
-    }
-  }
-}
+      show: false,
+    };
+  },
+};
 </script>
 ```
 
@@ -84,6 +87,7 @@ export default {
 Nuxt 提供了`<ClientOnly>`专门在客户端渲染组件的组件。要仅在客户端导入组件，请在仅客户端插件中注册该组件。
 
 pages/example.vue
+
 ```vue
 <template>
   <div>
@@ -95,9 +99,11 @@ pages/example.vue
   </div>
 </template>
 ```
+
 Use a slot as fallback until `<ClientOnly>` is mounted on client side.
 
 pages/example.vue
+
 ```vue
 <template>
   <div>
@@ -115,6 +121,7 @@ pages/example.vue
 ```
 
 ## Library Authors
+
 Making Vue component libraries with automatic tree-shaking and component registration is super easy ✨
 
 You can use the components:dirs hook to easily extend the directory list without requiring user configuration in your Nuxt module.
@@ -137,21 +144,21 @@ import { join } from 'pathe'
 import { defineNuxtModule } from '@nuxt/kit'
 
 export default defineNuxtModule({
-  hooks: {
-    'components:dirs'(dirs) {
-      // Add ./components dir to the list
-      dirs.push({
-        path: join(__dirname, 'components'),
-        prefix: 'awesome'
-      })
-    }
-  }
+hooks: {
+'components:dirs'(dirs) {
+// Add ./components dir to the list
+dirs.push({
+path: join(\_\_dirname, 'components'),
+prefix: 'awesome'
+})
+}
+}
 })
 
 That's it! Now in your project, you can import your ui library as a Nuxt module in your nuxt.config file:
 
 export default {
-  buildModules: ['awesome-ui/nuxt']
+buildModules: ['awesome-ui/nuxt']
 }
 
 ... and directly use the module components (prefixed with awesome-) in our pages/index.vue:

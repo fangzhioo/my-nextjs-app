@@ -24,15 +24,14 @@ $breakpoints: (
 
 // 定义媒体查询断点
 @mixin media-to($breakpoint) {
-    $query: map-get($breakpoints, $breakpoint);
-    // 这里是scss error提示估计大部分人（包括我）都没怎么使用过
-    @if not $query {
-        @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
-    }
-    // 具体断点解释在这里，作者比较严谨，校验了$query合法性
-    @media #{if(type-of($query) == 'string', unquote($query), inspect($query))}
-    {
-        @content;
-    }
+  $query: map-get($breakpoints, $breakpoint);
+  // 这里是scss error提示估计大部分人（包括我）都没怎么使用过
+  @if not $query {
+    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+  // 具体断点解释在这里，作者比较严谨，校验了$query合法性
+  @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+    @content;
+  }
 }
 /** 媒体查询 end **/

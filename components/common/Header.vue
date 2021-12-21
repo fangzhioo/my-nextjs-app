@@ -12,7 +12,7 @@
         </ul>
       </div>
       <div class="kirito_header__above-theme">
-        <span @click="handleChangeTheme">{{theme}}</span>
+        <span @click="handleChangeTheme">{{ theme }}</span>
       </div>
       <div class="kirito_header__above-search">search</div>
     </div>
@@ -20,26 +20,25 @@
 </template>
 
 <script lang="ts" setup>
-  const theme = useTheme();
-  
-  onBeforeMount(() => {
-    theme.value = useDefaultTheme().value;
-    useMeta({
-      htmlAttrs: {
-        'data-mode': theme.value
-      }
-    })
-  })
+const theme = useTheme();
 
-  const handleChangeTheme = () => {
-    theme.value = theme.value === 'dark' ? 'light' : 'dark';
-    useMeta({
-      htmlAttrs: {
-        'data-mode': theme.value
-      }
-    })
-  }
+onBeforeMount(() => {
+  theme.value = useDefaultTheme().value;
+  useMeta({
+    htmlAttrs: {
+      'data-mode': theme.value,
+    },
+  });
+});
 
+const handleChangeTheme = () => {
+  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+  useMeta({
+    htmlAttrs: {
+      'data-mode': theme.value,
+    },
+  });
+};
 </script>
 
 <style lang="scss">
@@ -49,7 +48,7 @@
   top: 0;
   z-index: 100;
   height: 60px;
-  transition: top .4s;
+  transition: top 0.4s;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
 
   &__above {
@@ -68,6 +67,6 @@
         display: flex;
       }
     }
-  }  
+  }
 }
 </style>

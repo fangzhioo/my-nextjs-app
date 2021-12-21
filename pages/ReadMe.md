@@ -13,14 +13,15 @@ Nuxt 会自动将`Vue Router`和 展开`pages/`目录集成到你的应用程序
 如果你需要一个包罗万象的路由，你可以使用一个名为`[...slug].vue`的文件来创建它。这将匹配该路径下的所有路由，因此它不支持任何非动态文本。
 
 Example
+
 ```
 -| pages/
 ---| index.vue
 ---| users-[group]/
 -----| [id].vue
 ```
-鉴于上面的示例，您可以通过`$route`对象访问组件中的 `group`和 `id` ：
 
+鉴于上面的示例，您可以通过`$route`对象访问组件中的 `group`和 `id` ：
 
 ```vue
 <template>
@@ -28,6 +29,7 @@ Example
   {{ $route.params.id }}
 </template>
 ```
+
 导航到`/users-admins/123`将呈现：
 
 ```
@@ -36,7 +38,7 @@ admins 123
 
 ## Navigation (导航)
 
-要在应用程序的页面之间导航，您应该使用该  `<NuxtLink>` 组件。该组件包含在 `Nuxt` 中，因此您不必像导入其他组件一样导入它。它类似于 HTML`<a>`标记，不同之处在于`href="/about"`您使用`to="/about"`. 如果您以前使用`vue-router`过，则可以将其`<NuxtLink>`视为`<RouterLink>`.
+要在应用程序的页面之间导航，您应该使用该 `<NuxtLink>` 组件。该组件包含在 `Nuxt` 中，因此您不必像导入其他组件一样导入它。它类似于 HTML`<a>`标记，不同之处在于`href="/about"`您使用`to="/about"`. 如果您以前使用`vue-router`过，则可以将其`<NuxtLink>`视为`<RouterLink>`.
 
 指向`pages`文件夹中`index.vue`页面的简单链接：
 
@@ -85,16 +87,17 @@ Example:
       {
         path: 'child',
         component: '~/pages/parent/child.vue',
-        name: 'parent-child'
-      }
-    ]
-  }
-]
+        name: 'parent-child',
+      },
+    ],
+  },
+];
 ```
 
-要显示 `child.vue` 组件，您必须将`<NuxtChild>`组件 插入其中 `pages/parent.vue`：
+要显示 `child.vue` 组件，您必须将`<NuxtChild>`组件 插入`pages/parent.vue`中：
 
 pages/parent.vue
+
 ```vue
 <template>
   <div>

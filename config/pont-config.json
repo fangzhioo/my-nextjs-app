@@ -1,12 +1,11 @@
 {
-    "outDir": "../api",
-    "origins": [
-      {
-        "originUrl": "https://petstore.swagger.io/v2/swagger.json",
-        "name": "petstore",
-        "usingMultipleOrigins": true
-      }
-    ],
-    "templatePath": "./pontTemplate"
-  }
-  
+  "outDir": "../api",
+  "origins": [
+    {
+      "originUrl": "https://petstore.swagger.io/v2/swagger.json",
+      "name": "petstore",
+      "usingMultipleOrigins": true
+    }
+  ],
+  "templatePath": "./pontTemplate"
+}

@@ -7,6 +7,7 @@ Nuxt 提供了一个可定制的布局框架，您可以在整个应用程序中
 如果您的应用程序中只有一个布局，您也可以使用`app.vue`。
 
 ## Example: a custom layout
+
 -| layouts/
 ---| custom.vue
 
@@ -22,10 +23,11 @@ Nuxt 提供了一个可定制的布局框架，您可以在整个应用程序中
 ```
 
 鉴于上面的示例，您可以使用这样的自定义布局：
+
 ```vue
 <script>
 export default {
-  layout: "custom",
+  layout: 'custom',
 };
 </script>
 ```
@@ -53,6 +55,7 @@ export default {
 </script>
 
 ## Example: using with <script setup>
+
 If you are utilizing Vue <script setup> compile-time syntactic sugar , you can use a secondary <script> tag to set layout options as needed.
 
 Learn more about <script setup> and <script> tags co-existing in the Vue docs.

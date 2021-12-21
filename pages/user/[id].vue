@@ -1,15 +1,9 @@
-
-
 <template>
   <div>
-    {{$route.params.id}}
+    {{ $route.params.id }}
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
