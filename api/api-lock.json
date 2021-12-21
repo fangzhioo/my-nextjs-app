@@ -6,7 +6,10 @@
         "name": "pet",
         "interfaces": [
           {
-            "consumes": ["application/json", "application/xml"],
+            "consumes": [
+              "application/json",
+              "application/xml"
+            ],
             "description": "Add a new pet to the store",
             "name": "addPet",
             "method": "post",
@@ -39,7 +42,10 @@
             ]
           },
           {
-            "consumes": ["application/json", "application/xml"],
+            "consumes": [
+              "application/json",
+              "application/xml"
+            ],
             "description": "Update an existing pet",
             "name": "updatePet",
             "method": "put",
@@ -208,7 +214,9 @@
             ]
           },
           {
-            "consumes": ["application/x-www-form-urlencoded"],
+            "consumes": [
+              "application/x-www-form-urlencoded"
+            ],
             "description": "Updates a pet in the store with form data",
             "name": "updatePetWithForm",
             "method": "post",
@@ -317,7 +325,9 @@
             ]
           },
           {
-            "consumes": ["multipart/form-data"],
+            "consumes": [
+              "multipart/form-data"
+            ],
             "description": "uploads an image",
             "name": "uploadFile",
             "method": "post",
@@ -421,7 +431,9 @@
             "parameters": []
           },
           {
-            "consumes": ["application/json"],
+            "consumes": [
+              "application/json"
+            ],
             "description": "Place an order for a pet",
             "name": "placeOrder",
             "method": "post",
@@ -524,7 +536,9 @@
         "name": "user",
         "interfaces": [
           {
-            "consumes": ["application/json"],
+            "consumes": [
+              "application/json"
+            ],
             "description": "Create user\nThis can only be done by the logged in user.",
             "name": "createUser",
             "method": "post",
@@ -557,7 +571,9 @@
             ]
           },
           {
-            "consumes": ["application/json"],
+            "consumes": [
+              "application/json"
+            ],
             "description": "Creates list of users with given input array",
             "name": "createUsersWithArrayInput",
             "method": "post",
@@ -600,7 +616,9 @@
             ]
           },
           {
-            "consumes": ["application/json"],
+            "consumes": [
+              "application/json"
+            ],
             "description": "Creates list of users with given input array",
             "name": "createUsersWithListInput",
             "method": "post",
@@ -738,7 +756,9 @@
             ]
           },
           {
-            "consumes": ["application/json"],
+            "consumes": [
+              "application/json"
+            ],
             "description": "Updated user\nThis can only be done by the logged in user.",
             "name": "updateUser",
             "method": "put",
@@ -975,7 +995,11 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": ["'placed'", "'approved'", "'delivered'"],
+              "enum": [
+                "'placed'",
+                "'approved'",
+                "'delivered'"
+              ],
               "typeProperties": []
             },
             "name": "status",
@@ -1057,7 +1081,11 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": ["'available'", "'pending'", "'sold'"],
+              "enum": [
+                "'available'",
+                "'pending'",
+                "'sold'"
+              ],
               "typeProperties": []
             },
             "name": "status",

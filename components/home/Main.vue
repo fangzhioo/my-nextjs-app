@@ -1,7 +1,7 @@
 <template>
   <div class="home_main">
     <section>
-      <img src="~images/lazyload.gif" width="100%" alt="" srcset="" />
+      <img src="~/images/lazyload.gif" width="100%" alt="" srcset="" />
     </section>
   </div>
 </template>
