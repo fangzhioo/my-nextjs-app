@@ -2,19 +2,10 @@
   // https://v3.nuxtjs.org/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "~": ["."],
-      "~/*": ["./*"],
-      "@": ["."],
-      "@/*": ["./*"],
-      "assets": ["assets"],
-      "assets/*": ["assets/*"],
-      "public": ["."],
-      "public/*": ["./*"],
-      "images": ["assets/images"],
-      "images/*": ["assets/images/*"],
-      "style": ["assets/style"],
-      "style/*": ["assets/style/*"]
+      "~/*": ["./*"]
     }
   }
 }

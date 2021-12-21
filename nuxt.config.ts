@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     ],
   },
   css: ['assets/style/global.scss'],
-  buildModules: ['@vueuse/core/nuxt', '@pinia/nuxt'],
+  buildModules: ['@vueuse/nuxt', '@pinia/nuxt'],
   vite: {
     logLevel: 'info',
   },

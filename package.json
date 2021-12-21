@@ -9,7 +9,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.14.0",
     "@pinia/nuxt": "^0.1.6",
-    "@vueuse/core": "^7.4.0",
+    "@vueuse/nuxt": "^7.4.0",
     "eslint": "^8.5.0",
     "nuxt3": "latest",
     "pont-engine": "^1.0.13",
