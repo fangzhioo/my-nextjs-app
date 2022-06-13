@@ -1,6 +1,6 @@
 <template>
   <footer class="kirito_footer">
-    <div>cyptype</div>
+    <div>桐人@2022</div>
   </footer>
 </template>
 
@@ -11,8 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  background-color: var(--theme);
+  height: 50px;
+  background-color: var(--sub-background);
   @include media-to(xs) {
     display: none;
   }

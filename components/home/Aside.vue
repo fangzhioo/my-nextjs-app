@@ -1,7 +1,7 @@
 <template>
   <aside class="home_aside">
     <section>
-      <img src="/images/error_avatar.jpg" alt="" srcset="" />
+      <img src="/static/images/error_avatar.jpg" alt="" srcset="" />
     </section>
   </aside>
 </template>

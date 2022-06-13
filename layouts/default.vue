@@ -1,14 +1,16 @@
 <template>
   <div class="layout_default">
-    <common-header />
+    <home-header />
     <main class="kirito_container layout_default-main">
       <slot />
     </main>
-    <common-footer />
+    <home-footer />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// 默认的首页配置
+</script>
 
 <style lang="scss">
 .layout_default {

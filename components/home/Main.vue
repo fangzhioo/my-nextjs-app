@@ -3,7 +3,6 @@
     <section>
       <img src="~/images/lazyload.gif" width="100%" alt="" srcset="" />
     </section>
-    <div>asd</div>
   </div>
 </template>
 

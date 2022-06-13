@@ -3,18 +3,18 @@
   <header class="kirito_header">
     <!-- 正常头部导航 -->
     <div class="kirito_header__above">
-      <div class="kirito_header__above-logo">logo</div>
-      <div class="kirito_header__above-nav">
+      <div class="kirito_header__above-logo">热搜榜</div>
+      <!-- <div class="kirito_header__above-nav">
         <ul class="kirito_header__above-nav-list">
           <li>导航一</li>
           <li>导航二</li>
           <li>导航三</li>
         </ul>
-      </div>
+      </div> -->
       <div class="kirito_header__above-theme">
         <span @click="handleChangeTheme">{{ theme }}</span>
       </div>
-      <div class="kirito_header__above-search">search</div>
+      <!-- <div class="kirito_header__above-search">search</div> -->
     </div>
   </header>
 </template>
@@ -24,7 +24,7 @@ const theme = useTheme()
 
 onBeforeMount(() => {
   theme.value = useDefaultTheme().value
-  useMeta({
+  useHead({
     htmlAttrs: {
       'data-mode': theme.value,
     },
@@ -33,7 +33,7 @@ onBeforeMount(() => {
 
 const handleChangeTheme = () => {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
-  useMeta({
+  useHead({
     htmlAttrs: {
       'data-mode': theme.value,
     },

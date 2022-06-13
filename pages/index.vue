@@ -1,15 +1,8 @@
 <template>
   <div class="home-page">
-    <home-main />
-    <home-aside />
+    <h1>home</h1>
+    <NuxtLink to="/hot"> Hot page </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts"></script>
-
-<style>
-.home-page {
-  display: flex;
-  width: 100%;
-}
-</style>

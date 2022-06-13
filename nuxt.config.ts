@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 import { resolve } from 'pathe'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
@@ -8,13 +8,10 @@ export default defineNuxtConfig({
     style: resolve(__dirname, './assets/style'),
   },
   head: {
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   },
   css: ['assets/style/global.scss'],
-  buildModules: ['@vueuse/nuxt', '@pinia/nuxt'],
+  buildModules: ['@pinia/nuxt'],
   vite: {
     logLevel: 'info',
   },

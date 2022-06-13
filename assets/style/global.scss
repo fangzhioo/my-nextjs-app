@@ -9,23 +9,23 @@
     background-color: var(--glass-background);
     @include media-to(xs) {
       max-width: 540px;
-      color: blue;
+      // color: blue;
     }
     @include media-to(sm) {
       max-width: 720px;
-      color: red;
+      // color: red;
     }
     @include media-to(md) {
       max-width: 960px;
-      color: green;
+      // color: green;
     }
     @include media-to(lg) {
       max-width: 1140px;
-      color: yellow;
+      // color: yellow;
     }
     @include media-to(xl) {
       max-width: 1340px;
-      color: aqua;
+      // color: aqua;
     }
   }
 }

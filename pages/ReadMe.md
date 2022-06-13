@@ -64,7 +64,7 @@ admins 123
 
 ## Nested Routes (嵌套路由)
 
-我们提供了一个类似`RouterView`的组件：`<NuxtChild>`，用于显示的子路由嵌套的组件。
+我们提供了一个类似`RouterView`的组件：`<NuxtNestedPage>`，用于显示的子路由嵌套的组件。
 
 Example:
 
@@ -94,7 +94,9 @@ Example:
 ]
 ```
 
-要显示 `child.vue` 组件，您必须将`<NuxtChild>`组件 插入`pages/parent.vue`中：
+要显示 `child.vue` 组件，您必须将`<NuxtNestedPage>`组件 插入`pages/parent.vue`中：
+
+> 
 
 pages/parent.vue
 
@@ -102,7 +104,7 @@ pages/parent.vue
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <NuxtChild :foobar="123" />
+    <NuxtNestedPage :foobar="123" />
   </div>
 </template>
 ```
